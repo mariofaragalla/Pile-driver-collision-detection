@@ -1,0 +1,81 @@
+[System]
+Name='fuzzy_pile3'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=24
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Vin'
+Range=[-5 5]
+NumMFs=7
+MF1='NS':'trimf',[-3 -1.25 -0.5]
+MF2='Z':'trimf',[-1 0 1]
+MF3='PS':'trimf',[0.553 1.25 3]
+MF4='NH':'trimf',[-5 -5 -3.5]
+MF5='PH':'trimf',[3.5 5 5]
+MF6='NM':'trimf',[-4.5 -3.5 -2]
+MF7='PM':'trimf',[2 3.5 4.5]
+
+[Input2]
+Name='theta_dot'
+Range=[-0.2 0.2]
+NumMFs=7
+MF1='NS':'trimf',[-0.04 -0.03 -0.02]
+MF2='Z':'trimf',[-0.025 0 0.025]
+MF3='PS':'trimf',[0.02 0.03 0.04]
+MF4='PM':'trimf',[0.035 0.04 0.05]
+MF5='PH':'trimf',[0.045 0.07 5]
+MF6='NM':'trimf',[-0.05 -0.04 -0.035]
+MF7='NH':'trimf',[-5 -0.07 -0.045]
+
+[Input3]
+Name='dir'
+Range=[-5 5]
+NumMFs=2
+MF1='P':'trimf',[0 5 5]
+MF2='N':'trimf',[-5 -5 0]
+
+[Output1]
+Name='Vout'
+Range=[-5 5]
+NumMFs=7
+MF1='NH':'trimf',[-5 -5 -3.5]
+MF2='NS':'trimf',[-3 -1.25 -0.5]
+MF3='Z':'trimf',[-1 0 1]
+MF4='PS':'trimf',[0.5 1.75 3]
+MF5='PH':'trimf',[3.5 5 5]
+MF6='NM':'trimf',[-4.5 -3.5 -2]
+MF7='PM':'trimf',[2 3.5 4.5]
+
+[Rules]
+3 3 0, 2 (1) : 1
+7 4 0, 6 (1) : 1
+0 5 0, 1 (1) : 1
+2 2 0, 3 (1) : 1
+3 2 0, 4 (1) : 1
+7 2 0, 7 (1) : 1
+5 2 0, 5 (1) : 1
+1 1 0, 4 (1) : 1
+6 6 0, 7 (1) : 1
+1 2 0, 2 (1) : 1
+6 2 0, 6 (1) : 1
+4 2 0, 1 (1) : 1
+4 1 0, 5 (1) : 1
+5 3 0, 1 (1) : 1
+3 1 0, 2 (1) : 1
+7 6 0, 6 (1) : 1
+5 1 0, 1 (1) : 1
+0 5 1, 1 (1) : 1
+0 7 1, 1 (1) : 1
+1 3 0, 4 (1) : 1
+6 4 0, 7 (1) : 1
+4 3 0, 5 (1) : 1
+0 5 2, 5 (1) : 1
+0 7 2, 5 (1) : 1
